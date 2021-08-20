@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<style>
+
+    body{
+        overflow-x:hidden;
+    }
+
+
+    .container{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem;
+        padding-bottom: 0;
+        width: 40%;
+
+        
+    }
+    .container img,.container button{
+        
+        width: 100%;
+        margin: .3rem;
+    }
+    .container img{
+       
+        height: 24rem;
+    }
+    .load{
+        font-size: 3rem;
+        display: none;
+    }
+    .See{
+        box-shadow: 0px 0px 10px rgb(49, 143, 187);
+    }
+
+    .bg1,.bg2{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+        
+    }
+
+    .bg1{
+        animation: move1 30s linear  infinite;
+ 
+    }
+
+    .bg2{
+        transform: translateX(100%) rotateY(180deg);
+        animation: move2 30s linear  infinite;
+    }
+
+    @keyframes move1 {
+
+        0%{
+            transform: translateX(0%);
+        }100%{
+            transform: translateX(-100%);
+        }
+         
+     }
+
+     @keyframes move2 {
+
+        0%{
+            transform: translateX(100%) rotateY(180deg);
+        }100%{
+            transform: translateX(0%) rotateY(180deg);
+        }
+         
+     }
+    @media only screen and (max-width: 700px) {
+        .container{
+            width: 95%;
+            padding: 2rem .6rem;
+            margin: 0 auto;
+        
+        }
+      }
+
+      
+</style>
+<body>
+
+
+    <div class="container">
+
+        <svg  class="bg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,256L30,218.7C60,181,120,107,180,112C240,117,300,203,360,224C420,245,480,203,540,160C600,117,660,75,720,53.3C780,32,840,32,900,64C960,96,1020,160,1080,186.7C1140,213,1200,203,1260,186.7C1320,171,1380,149,1410,138.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+        <svg  class="bg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,256L30,218.7C60,181,120,107,180,112C240,117,300,203,360,224C420,245,480,203,540,160C600,117,660,75,720,53.3C780,32,840,32,900,64C960,96,1020,160,1080,186.7C1140,213,1200,203,1260,186.7C1320,171,1380,149,1410,138.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+        <h1>Meme Hub</h1>
+        <div class="load">📂...</div>
+
+
+        <img src="https://preview.redd.it/ri6jd5hqxai71.jpg?width=216&crop=smart&auto=webp&s=34c2b88a90bf1b3355f286b0be1cbf73beee136e" class="gif">
+
+        <button type="button" class="btn btn-danger"
+        
+        onclick="ChangeMema(event)"
+        
+        
+        >Change Me</button>
+    
+
+
+    </div>
+    
+</body>
+
+<script src="./built/index.js"></script>
+
+
+</html>
